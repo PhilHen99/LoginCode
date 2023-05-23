@@ -39,6 +39,10 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.btnearch = new System.Windows.Forms.Button();
             this.dtginfo = new System.Windows.Forms.DataGridView();
+            this.lblrole = new System.Windows.Forms.Label();
+            this.cborole = new System.Windows.Forms.ComboBox();
+            this.lbldues = new System.Windows.Forms.Label();
+            this.cbodues = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtginfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +107,7 @@
             // 
             this.txtid.Location = new System.Drawing.Point(41, 47);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(245, 20);
+            this.txtid.Size = new System.Drawing.Size(131, 20);
             this.txtid.TabIndex = 10;
             // 
             // lblid
@@ -144,16 +148,73 @@
             this.dtginfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtginfo.Location = new System.Drawing.Point(41, 225);
             this.dtginfo.Name = "dtginfo";
-            this.dtginfo.Size = new System.Drawing.Size(318, 138);
+            this.dtginfo.Size = new System.Drawing.Size(479, 138);
             this.dtginfo.TabIndex = 15;
+            // 
+            // lblrole
+            // 
+            this.lblrole.AutoSize = true;
+            this.lblrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrole.Location = new System.Drawing.Point(223, 19);
+            this.lblrole.Name = "lblrole";
+            this.lblrole.Size = new System.Drawing.Size(44, 25);
+            this.lblrole.TabIndex = 17;
+            this.lblrole.Text = "Rol";
+            // 
+            // cborole
+            // 
+            this.cborole.FormattingEnabled = true;
+            this.cborole.Items.AddRange(new object[] {
+            "Administrador\t",
+            "Cliente",
+            "Empleado"});
+            this.cborole.Location = new System.Drawing.Point(228, 45);
+            this.cborole.Name = "cborole";
+            this.cborole.Size = new System.Drawing.Size(121, 21);
+            this.cborole.TabIndex = 18;
+            // 
+            // lbldues
+            // 
+            this.lbldues.AutoSize = true;
+            this.lbldues.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldues.Location = new System.Drawing.Point(417, 19);
+            this.lbldues.Name = "lbldues";
+            this.lbldues.Size = new System.Drawing.Size(80, 25);
+            this.lbldues.TabIndex = 19;
+            this.lbldues.Text = "Cuotas";
+            // 
+            // cbodues
+            // 
+            this.cbodues.FormattingEnabled = true;
+            this.cbodues.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbodues.Location = new System.Drawing.Point(399, 45);
+            this.cbodues.Name = "cbodues";
+            this.cbodues.Size = new System.Drawing.Size(121, 21);
+            this.cbodues.TabIndex = 20;
             // 
             // Crud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(384, 375);
+            this.ClientSize = new System.Drawing.Size(532, 375);
             this.ControlBox = false;
+            this.Controls.Add(this.cbodues);
+            this.Controls.Add(this.lbldues);
+            this.Controls.Add(this.cborole);
+            this.Controls.Add(this.lblrole);
             this.Controls.Add(this.dtginfo);
             this.Controls.Add(this.btnearch);
             this.Controls.Add(this.btndelete);
@@ -167,6 +228,7 @@
             this.Controls.Add(this.lbluser);
             this.Name = "Crud";
             this.Text = "CRUD";
+            this.Load += new System.EventHandler(this.Crud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtginfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,6 +248,10 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnearch;
         private System.Windows.Forms.DataGridView dtginfo;
+        private System.Windows.Forms.Label lblrole;
+        private System.Windows.Forms.ComboBox cborole;
+        private System.Windows.Forms.Label lbldues;
+        private System.Windows.Forms.ComboBox cbodues;
     }
 }
 

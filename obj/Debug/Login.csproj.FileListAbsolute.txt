@@ -74,3 +74,4 @@ D:\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II
 C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Crud.resources
 C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.LoginForm.resources
 C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Register.resources
+C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.ClientForms.resources
