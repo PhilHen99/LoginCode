@@ -43,6 +43,8 @@
             this.cborole = new System.Windows.Forms.ComboBox();
             this.lbldues = new System.Windows.Forms.Label();
             this.cbodues = new System.Windows.Forms.ComboBox();
+            this.btnup = new System.Windows.Forms.Button();
+            this.btninvoice = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtginfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,13 +206,35 @@
             this.cbodues.Size = new System.Drawing.Size(121, 21);
             this.cbodues.TabIndex = 20;
             // 
+            // btnup
+            // 
+            this.btnup.Location = new System.Drawing.Point(422, 108);
+            this.btnup.Name = "btnup";
+            this.btnup.Size = new System.Drawing.Size(75, 23);
+            this.btnup.TabIndex = 21;
+            this.btnup.Text = "Cargar";
+            this.btnup.UseVisualStyleBackColor = true;
+            this.btnup.Click += new System.EventHandler(this.btnup_Click);
+            // 
+            // btninvoice
+            // 
+            this.btninvoice.Location = new System.Drawing.Point(422, 156);
+            this.btninvoice.Name = "btninvoice";
+            this.btninvoice.Size = new System.Drawing.Size(75, 23);
+            this.btninvoice.TabIndex = 22;
+            this.btninvoice.Text = "Facturación";
+            this.btninvoice.UseVisualStyleBackColor = true;
+            this.btninvoice.Click += new System.EventHandler(this.btninvoice_Click);
+            // 
             // Crud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(532, 375);
+            this.ClientSize = new System.Drawing.Size(532, 377);
             this.ControlBox = false;
+            this.Controls.Add(this.btninvoice);
+            this.Controls.Add(this.btnup);
             this.Controls.Add(this.cbodues);
             this.Controls.Add(this.lbldues);
             this.Controls.Add(this.cborole);
@@ -252,6 +276,8 @@
         private System.Windows.Forms.ComboBox cborole;
         private System.Windows.Forms.Label lbldues;
         private System.Windows.Forms.ComboBox cbodues;
+        private System.Windows.Forms.Button btnup;
+        private System.Windows.Forms.Button btninvoice;
     }
 }
 

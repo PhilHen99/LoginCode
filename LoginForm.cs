@@ -13,6 +13,7 @@ using MySql.Data.MySqlClient;
 using System.Data.SqlTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using MySqlX.XDevAPI.Common;
+using Login.Charging;
 
 namespace Login
 
@@ -37,56 +38,22 @@ namespace Login
             InitializeComponent();
             
         }
-        private void btnaccess_Click(object sender, EventArgs e)
+
+        public void btnaccess_Click(object sender, EventArgs e)
         {
             {
-                /*if (attempt < 4)
-                {
-                    
-                    //basic connection with the server, and an aditional query to bring the username and password from the user input
-                    SqlConnection con = new SqlConnection("Data Source=PIPO\\SQLEXPRESS;Initial Catalog=Loginandcrud;Integrated Security=True");
-                    SqlCommand cmd = new SqlCommand("select role from ut where username='" + txtUsername.Text + "' and password ='" + txtPassword.Text + "'", con);
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    
-
-                    if (dt.Rows.Count > 0 )
-                    
-                    {
-                        //this makes change the screen and close the current one when the id and password are correct
-                        MessageBox.Show("Acceso correcto", "información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                        Crud crud = new Crud();
-                        crud.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Inténtalo de nuevo, número de intentos realizados: " + attempt, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else if (attempt == 4)
-                {
-                    //this blocks the form when the limit of attempts is reached
-                    MessageBox.Show("Intentos máximos alcanzados");
-                    txtPassword.Enabled = false;
-                    txtUsername.Enabled = false;
-                    this.Close();
-                }
-                //this increases the counter by 1 every time a mistake is made
-                attempt++;
-            }*/
                 string ConnString = "Data Source=PIPO\\SQLEXPRESS;Initial Catalog=Loginandcrud;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(ConnString);
                 string username = txtUsername.Text;
                 string password = txtPassword.Text;
-                
 
+            //This makes the query to check only for the column of the role
                 string query = "SELECT role FROM ut WHERE username = @username AND password = @password";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
                 connection.Open();
+                //this converts the result in
                 object roleresult = command.ExecuteScalar();
 
                 if (roleresult != null)
@@ -107,7 +74,15 @@ namespace Login
                         this.Hide();
                         ClientForms client = new ClientForms();
                         client.Show();
-                    } 
+                    }
+
+                    else if (role == "Empleado")
+                    {
+                        MessageBox.Show("Bienvenido " + username, "información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+                        Products invoice = new Products();
+                        invoice.Show();
+                    }
                 }
                 else
                 {
@@ -116,9 +91,7 @@ namespace Login
                 connection.Close();
             }
         }
-
-
-            private void btnreg_Click(object sender, EventArgs e)
+        private void btnreg_Click(object sender, EventArgs e)
         {
             //hides the current form and opens the register form
             this.Hide();
@@ -126,5 +99,9 @@ namespace Login
             regi.Show();
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

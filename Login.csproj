@@ -86,6 +86,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Charging\ArchivoCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Charging\ArchivoCSV.Designer.cs">
+      <DependentUpon>ArchivoCSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Charging\ArchivoRTF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Charging\ArchivoRTF.Designer.cs">
+      <DependentUpon>ArchivoRTF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Charging\ArchivoTXT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Charging\ArchivoTXT.Designer.cs">
+      <DependentUpon>ArchivoTXT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Charging\ArchivoXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Charging\ArchivoXML.Designer.cs">
+      <DependentUpon>ArchivoXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Charging\Datos.cs" />
+    <Compile Include="Charging\frmentrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Charging\frmentrada.Designer.cs">
+      <DependentUpon>frmentrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Charging\Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Charging\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +150,24 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Verify.cs" />
+    <EmbeddedResource Include="Charging\ArchivoCSV.resx">
+      <DependentUpon>ArchivoCSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charging\ArchivoRTF.resx">
+      <DependentUpon>ArchivoRTF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charging\ArchivoTXT.resx">
+      <DependentUpon>ArchivoTXT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charging\ArchivoXML.resx">
+      <DependentUpon>ArchivoXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charging\frmentrada.resx">
+      <DependentUpon>frmentrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charging\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>

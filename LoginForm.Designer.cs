@@ -76,6 +76,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(12, 161);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(213, 20);
             this.txtPassword.TabIndex = 15;
             // 
@@ -111,6 +112,7 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnaccess;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -125,6 +127,7 @@
             this.Controls.Add(this.btnaccess);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

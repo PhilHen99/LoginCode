@@ -25,11 +25,13 @@ namespace Login
             SqlConnection con = new SqlConnection("Data Source=PIPO\\SQLEXPRESS;Initial Catalog=Loginandcrud;Integrated Security=True");
             con.Open();
             //this takes the info from the database, to prepare them to insert the new values
-            SqlCommand cmd = new SqlCommand("insert into ut values(@Id,@user,@password)", con);
+            SqlCommand cmd = new SqlCommand("insert into ut values(@Id,@user,@password,@role,@dues)", con);
             //this brings the user,password and id from the form
             cmd.Parameters.AddWithValue("@id", txtidRegi.Text);
             cmd.Parameters.AddWithValue("@user", txtuserRegi.Text);
             cmd.Parameters.AddWithValue("@password", txtpasswordRegi.Text);
+            cmd.Parameters.AddWithValue("@role", DBNull.Value);
+            cmd.Parameters.AddWithValue("@dues", DBNull.Value);
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Correctamente agregado");

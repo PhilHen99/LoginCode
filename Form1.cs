@@ -14,6 +14,7 @@ using System.Linq.Expressions;
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
 using Org.BouncyCastle.Utilities.Collections;
+using Login.Charging;
 
 namespace Login
 {
@@ -71,7 +72,7 @@ namespace Login
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
-                    dtginfo.DataSource = dataTable;
+                    dtginfo.DataSource = dataTable; 
                     adminchecker();
                 }
                 catch (Exception ex)
@@ -89,20 +90,7 @@ namespace Login
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ////INSERT, OLD CODE WITHOUT SECURITY, HERE ONLY FOR RESEARCH PURPOSES///
-            //this imports the table from sql 
-            /*SqlConnection con = new SqlConnection("Data Source=PIPO\\SQLEXPRESS;Initial Catalog=Loginandcrud;Integrated Security=True");
-            con.Open();
-            //this takes the info from the database, to prepare them to insert the new values
-            SqlCommand cmd = new SqlCommand("insert into ut values(@Id,@user,@password)", con);
-            //this brings the user, password and id from the form
-            cmd.Parameters.AddWithValue("@Id", txtid.Text);
-            cmd.Parameters.AddWithValue("@user", txtUsername.Text);
-            cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-            cmd.ExecuteNonQuery();
-            con.Close();
 
-            MessageBox.Show("Correctamente agregado");*/
             using (SqlConnection connection = new SqlConnection(ConnString))
             {
                 // This makes the query from a function, to avoid man in the middle attacks. 
@@ -132,20 +120,6 @@ namespace Login
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            /* OLD CODE WITHOUT SECURITY
-            SqlConnection con = new SqlConnection("Data Source=PIPO\\SQLEXPRESS;Initial Catalog=Loginandcrud;Integrated Security=True");
-            con.Open();
-            //this updates the info from the db comparing the values individually, with the help of the index (id)
-            SqlCommand cmd = new SqlCommand("update ut set username=@username, password=@password where id=@id", con);
-            //this brings the user and password from the form
-            cmd.Parameters.AddWithValue("@Id", txtid.Text);
-            cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-            cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            MessageBox.Show("Correctamente actualizado");
-            */
             //This new code does the same, but with security to avoid attacks man in the middle
             using (SqlConnection connection = new SqlConnection(ConnString))
             {
@@ -176,18 +150,6 @@ namespace Login
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            /* OLD CODE WITHOUT SEC, only for research purposes
-            SqlConnection con = new SqlConnection("Data Source=PIPO\\SQLEXPRESS;Initial Catalog=Loginandcrud;Integrated Security=True");
-            con.Open();
-            //this is a simple query who deletes the item with the same index(id) 
-            SqlCommand cmd = new SqlCommand("delete ut where Id=@Id",con);
-            //this is the parse to avoid errors of format with the id 
-            cmd.Parameters.AddWithValue("@id", int.Parse(txtid.Text));
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            MessageBox.Show("Eliminado correctamente");
-            */
             if (MessageBox.Show("¿Estás seguro de eliminar este registro?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 using (SqlConnection connection = new SqlConnection(ConnString))
@@ -213,20 +175,6 @@ namespace Login
 
         private void btnearch_Click(object sender, EventArgs e)
         {
-            /* OLD CODE WITHOUT SEC
-            SqlConnection con = new SqlConnection("Data Source=PIPO\\SQLEXPRESS;Initial Catalog=Loginandcrud;Integrated Security=True");
-            con.Open();
-            //This makes the index (id) the item who brings the info
-            SqlCommand cmd = new SqlCommand("select * from ut where id=@id", con);
-            //this is the parse to avoid errors of format with the id 
-            cmd.Parameters.AddWithValue("@id", int.Parse(txtid.Text));
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            //this brings the info from the database to the dtg
-            dtginfo.DataSource = dt;
-            */
             //The same code as the load of the table, but with a conditional to only show the asked registry
             using (SqlConnection connection = new SqlConnection(ConnString))
             {
@@ -249,6 +197,24 @@ namespace Login
             }
         }
 
+        private void btnup_Click(object sender, EventArgs e)
+        {
+            this.Hide();    
+            frmentrada entry = new frmentrada();
+            entry.Show();
+        }
+
+        private void btninvoice_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Products invoice = new Products();
+            invoice.Show();
+        }
+
+        private void dtginvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

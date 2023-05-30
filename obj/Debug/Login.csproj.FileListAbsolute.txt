@@ -75,3 +75,9 @@ C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Her
 C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.LoginForm.resources
 C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Register.resources
 C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.ClientForms.resources
+C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Charging.ArchivoCSV.resources
+C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Charging.frmentrada.resources
+C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Charging.ArchivoRTF.resources
+C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Charging.ArchivoTXT.resources
+C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Charging.ArchivoXML.resources
+C:\Users\Felip\OneDrive - pascualbravo.edu.co\College and related\Semestre 4\Herramientas II\Login\obj\Debug\Login.Charging.Products.resources

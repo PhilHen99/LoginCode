@@ -1,0 +1,12 @@
+sdsfdsfds
+1.select * from Offering
+where CourseNo like 'IS%'and Offterm = 'Summer' AND OffYear = 2005
+
+2.select * from Offering where CourseNo like 'IS%'and Offterm = 'Summer' or Offterm = 'Fall' AND OffYear = 2005
+
+3.select top(3) * from Faculty where FacState = 'WA' order by FacSalary desc
+
+4.select * from Faculty where FacDept = 'ms' and FacCity = 'Seattle' and FacSupervisor is null
+
+5.select top(3) * from Enrollment where OfferNo like '4%' order by EnrGrade desc
+
